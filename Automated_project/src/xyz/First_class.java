@@ -1,0 +1,23 @@
+package xyz;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test; class Automated {
+
+    @Test
+    public void jashantest(){
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\localadmin\\Downloads\\chromedriver_win32");
+        ChromeDriver driver = new ChromeDriver();
+        driver.get("https://www.google.com");
+        String actualTitle = "Google";
+        Assert.assertEquals(driver.getTitle(), actualTitle );
+      WebElement logo = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/img")  );
+      Assert.assertEquals(true, logo.isDisplayed());
+        System.out.println("pass");
+        driver.close();
+}
+}
+
+
+
